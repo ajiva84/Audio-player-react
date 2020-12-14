@@ -87,54 +87,36 @@ export function Home() {
 		},
 		{
 			id: 12,
-			category: "game",
-			name: "Dong KinKong Main",
-			url: "files/other/songs/dkng-main.mp3"
-		},
-		{
-			id: 13,
-			category: "game",
-			name: "Dong KinKong Other",
-			url: "files/other/songs/dkng-other.mp3"
-		},
-		{
-			id: 14,
-			category: "game",
-			name: "mega-man",
-			url: "files/other/songs/mega-man.mp3"
-		},
-		{
-			id: 15,
 			category: "cartoon",
 			name: "Flintstones",
 			url: "files/cartoons/songs/flintstones.mp3"
 		},
 		{
-			id: 16,
+			id: 13,
 			category: "cartoon",
 			name: "power-rangers",
 			url: "files/cartoons/songs/power-rangers.mp3"
 		},
 		{
-			id: 17,
+			id: 14,
 			category: "cartoon",
 			name: "simpsons",
 			url: "files/cartoons/songs/simpsons.mp3"
 		},
 		{
-			id: 18,
+			id: 15,
 			category: "cartoon",
 			name: "south-park",
 			url: "files/cartoons/songs/south-park.mp3"
 		},
 		{
-			id: 19,
+			id: 16,
 			category: "cartoon",
 			name: "thundercats",
 			url: "files/cartoons/songs/thundercats.mp3"
 		},
 		{
-			id: 20,
+			id: 17,
 			category: "cartoon",
 			name: "x-men",
 			url: "files/cartoons/songs/x-men.mp3"
@@ -147,18 +129,31 @@ export function Home() {
 	const handleSongclick = index => {
 		let song = `https://assets.breatheco.de/apis/sound/${list[index].url}`;
 		setSrc(song);
-		if (src !== "") {
-			player.current.play();
-			setPlaying(true);
+		if (playing == true) {
+			handlePauseClick();
+			setTimeout(() => {
+				handlePlayClick();
+			}, 100);
 		} else {
 			setTimeout(() => {
-				player.current.play();
-				setPlaying(true);
-			}, 1000);
+				handlePlayClick();
+			}, 100);
 		}
+		handlePlayClick();
+
+		// if (src !== "") {
+		// 	player.current.play();
+		// 	setPlaying(true);
+		// } else {
+		// 	setTimeout(() => {
+		// 		player.current.play();
+		// 		setPlaying(true);
+		// 	}, 1000);
+		// }
 		// console.log(player.current);
 		// handlePlayClick();
 		setChange(index);
+		console.log(change);
 	};
 
 	const handlePauseClick = () => {
@@ -179,24 +174,41 @@ export function Home() {
 	};
 
 	const handleLeftClick = () => {
-		if (change > 0) {
-			let myNext = change - 1;
+		console.log(change);
+		if (change == 0) {
+			let myNext = list.length - 1;
+			handlePauseClick();
 			handleSongclick(myNext);
 			setChange(myNext);
 		} else {
-			alert("hit next button");
+			let myNext = change - 1;
+			handlePauseClick();
+			handleSongclick(myNext);
+			setChange(myNext);
+			console.log(change);
 		}
 	};
 
 	const handleRightClick = () => {
-		if (change <= list.length - 1) {
-			let myNext = change + 1;
+		console.log(change);
+		if (change == list.length - 1) {
+			let myNext = 0;
+			handlePauseClick();
 			handleSongclick(myNext);
 			setChange(myNext);
 		} else {
-			alert("hit previous button");
+			let myNext = change + 1;
+			handlePauseClick();
+			handleSongclick(myNext);
+			setChange(myNext);
+
+			console.log(change);
 		}
 	};
+
+	// const handleVolumeUp = () => {
+	// 	player.audio.volume = 0.5;
+	// };
 
 	return (
 		<div className="text-center py-3 px-1 player">
