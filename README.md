@@ -30,7 +30,7 @@
 - [License](#-license)
 
 ## 🌈 Overview
-PixelWave Audio Player transforms the classic 4Geeks Academy React boilerplate into a vibrant, audio-focused experience. It ships with a curated retro soundtrack, slick playback controls, and a modular architecture that is ready for your next experiment—be it a nostalgic jukebox, a podcast hub, or a soundboard for your game.
+PixelWave Audio Player is a vibrant, audio-focused experience engineered from the ground up with React. It ships with a curated retro soundtrack, slick playback controls, and a modular architecture that is ready for your next experiment—be it a nostalgic jukebox, a podcast hub, or a soundboard for your game.
 
 <div align="center">
   <table>
@@ -61,7 +61,7 @@ Follow the steps below to get the project humming locally.
 
 ```bash
 # 1. Clone the repository
-$ git clone https://github.com/4GeeksAcademy/react-hello.git audio-player-react
+$ git clone https://github.com/YOUR_USERNAME/audio-player-react.git
 $ cd audio-player-react
 
 # 2. Install dependencies (requires Node.js 18 or newer)
