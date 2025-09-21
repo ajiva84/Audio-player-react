@@ -6,6 +6,8 @@
 
 This template is similar to create-react-app but it's meant for 4Geeks Academy students.
 
+Requires **Node.js 18** or later.
+
 ##### Download the boilerplate using git
 
 ```
@@ -21,7 +23,7 @@ $ npm install
 ## Start coding!
 
 For Windows, Mac, Linux or Gitpod, start the webpack server with live reload:
-- `$ npm run start`
+- `$ npm start`
 
 You can update the `styles/index.scss` or `js/index.js` depending on your needs.
 Add more files into your, `./src/js/components` or styles folder as you need them.
