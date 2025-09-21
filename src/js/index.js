@@ -1,15 +1,8 @@
-//import react into the bundle
-import React from "react";
-import ReactDOM from "react-dom";
-
-//include bootstrap npm library into the bundle
-import "bootstrap";
-
-//include your index.scss file into the bundle
+import { createRoot } from "react-dom/client";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../styles/index.scss";
-
-//import your own components
 import { Home } from "./component/home.js";
 
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+const root = createRoot(document.querySelector("#app"));
+root.render(<Home />);
+
